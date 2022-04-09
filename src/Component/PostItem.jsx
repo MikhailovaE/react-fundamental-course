@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from "./UI/Button/Button";
-// import {useHistory} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const PostItem = (props) => {
-    // const router = useHistory()
+    const router = useNavigate()
 
     return (
         <div className="post">
@@ -14,9 +14,9 @@ const PostItem = (props) => {
                 </div>
             </div>
             <div className="post__btns">
-                {/* <Button onClick={() => router.push(`/posts/${props.post.id}`)}>
+                <Button onClick={() => router(`/posts/${props.post.id}`)}>
                     Открыть
-                </Button> */}
+                </Button>
                 <Button onClick={() => props.remove(props.post)}>
                     Удалить
                 </Button>
